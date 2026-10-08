@@ -336,8 +336,8 @@ Python scraping utilities. <b>voxelEngine</b>, <b>router-cli</b> (Go) and
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=its-skark&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide_border=true&amp;background_color=0d1117&amp;border_color=21262d&amp;ring_color=8b5cf6&amp;text_color=e9edf6&amp;title_color=22d3ee&amp;icon_color=34d399" alt="Rachit Pandey's GitHub stats" width="330" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=its-skark&amp;layout=compact&amp;hide_border=true&amp;background_color=0d1117&amp;border_color=21262d&amp;title_color=22d3ee" alt="Top languages by public repo bytes" width="270" />
+  <img src="https://github-readme-stats.vercel.app/api?username=its-skark&amp;show_icons=true&amp;include_all_commits=true&amp;count_private=true&amp;hide_border=true&amp;theme=github_dark&amp;border_color=21262d" alt="Rachit Pandey's GitHub stats" width="330" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=its-skark&amp;layout=compact&amp;hide_border=true&amp;theme=github_dark&amp;border_color=21262d" alt="Top languages by public repo bytes" width="270" />
   <img src="https://streak-stats.demolab.com/?user=its-skark&amp;theme=github_dark&amp;hide_border=true" alt="GitHub contribution streak" width="330" />
 </p>
 

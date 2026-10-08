@@ -36,6 +36,53 @@ def strip_comments(text: str) -> str:
     return re.sub(r"<!--.*?-->", "", text, flags=re.S)
 
 
+def _lum(hex_col: str) -> float:
+    c = hex_col.lstrip("#")
+    v = []
+    for i in (0, 2, 4):
+        x = int(c[i:i + 2], 16) / 255
+        v.append(x / 12.92 if x <= 0.03928 else ((x + 0.055) / 1.055) ** 2.4)
+    return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]
+
+
+def contrast_ratio(a: str, b: str) -> float:
+    hi, lo = sorted([_lum(a), _lum(b)], reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def contrast_risk(svg: str) -> bool:
+    """Catch a card whose text colour is unreadable on its own background.
+
+    Real bug this catches: github-readme-stats ignores `text_color` for its
+    `.stat` labels and hardcodes a dark grey (#434d58). Pairing that with a dark
+    `background_color` gave a 2.2:1 contrast ratio — effectively invisible.
+    """
+    # The card paints its background as a <rect fill="#RRGGBB"> (often tagged
+    # data-testid="card-bg"); the URL's background_color is not in the SVG.
+    bg = None
+    m = re.search(r'card-bg[\s\S]{0,600}?fill="(#[0-9a-fA-F]{3,6})"', svg)
+    if m:
+        bg = m.group(1)
+    if not bg:
+        m = re.search(r'<rect[^>]*\sfill="(#[0-9a-fA-F]{3,6})"', svg)
+        if m:
+            bg = m.group(1)
+    if not bg or len(bg) == 4:
+        bg = "#" + bg.lstrip("#") if bg else None
+    if not bg:
+        return False
+    if _lum(bg) > 0.5:                       # light card: nothing to check
+        return False
+    worst = None
+    for m in re.finditer(r'\.(?:stat|header|rank-text|title)\s*\{[^}]*fill:\s*(#[0-9a-fA-F]{3,6})', svg):
+        col = m.group(1)
+        if len(col) == 4:
+            col = "#" + "".join(ch * 2 for ch in col[1:])
+        r = contrast_ratio(col, bg)
+        worst = r if worst is None else min(worst, r)
+    return worst is not None and worst < 4.5
+
+
 def images() -> list[tuple[str, str]]:
     text = strip_comments((ROOT / "README.md").read_text(encoding="utf-8"))
     out: list[tuple[str, str]] = []
@@ -65,6 +112,7 @@ def probe(url: str) -> tuple[int, str]:
 
 def main() -> int:
     fails = 0
+    warns = 0
     seen: set[str] = set()
     for kind, url in images():
         if url in seen:
@@ -98,12 +146,17 @@ def main() -> int:
         elif "<svg" not in body[:2000]:
             print(f"FAIL 200 but not an SVG  {short}")
             fails += 1
+        elif contrast_risk(body):
+            print(f"WARN low text contrast in SVG  {short}")
+            warns += 1
         else:
             kb = len(body) // 1024
             print(f"OK   200 svg ({kb} KB)  {short}")
         time.sleep(0.6)
 
     print("-" * 64)
+    if warns:
+        print(f"{warns} warning(s) — images render but may be hard to read")
     if fails:
         print(f"{fails} image(s) need attention")
         return 1
