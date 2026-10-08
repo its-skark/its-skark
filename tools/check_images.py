@@ -38,6 +38,10 @@ def strip_comments(text: str) -> str:
 
 def _lum(hex_col: str) -> float:
     c = hex_col.lstrip("#")
+    if len(c) == 3:
+        c = "".join(ch * 2 for ch in c)
+    if len(c) != 6 or not re.fullmatch(r"[0-9a-fA-F]{6}", c):
+        raise ValueError(f"not a hex colour: {hex_col!r}")
     v = []
     for i in (0, 2, 4):
         x = int(c[i:i + 2], 16) / 255
@@ -76,9 +80,10 @@ def contrast_risk(svg: str) -> bool:
     worst = None
     for m in re.finditer(r'\.(?:stat|header|rank-text|title)\s*\{[^}]*fill:\s*(#[0-9a-fA-F]{3,6})', svg):
         col = m.group(1)
-        if len(col) == 4:
-            col = "#" + "".join(ch * 2 for ch in col[1:])
-        r = contrast_ratio(col, bg)
+        try:
+            r = contrast_ratio(col, bg)
+        except ValueError:
+            continue
         worst = r if worst is None else min(worst, r)
     return worst is not None and worst < 4.5
 
