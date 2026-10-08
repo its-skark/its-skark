@@ -24,6 +24,13 @@ UA = {"User-Agent": "Mozilla/5.0 (compatible; readme-image-check/1.0)"}
 # Phrases that only ever appear in a *failed* badge. Bare "404" must NOT be
 # matched: it is a legitimate hex colour (e.g. Express 404040) and shows up in
 # the generated SVG as a fill value, not as an error message.
+# Phrases a card renders *instead of data* while still returning HTTP 200.
+ERROR_CARD = re.compile(
+    r"Something went wrong|Could not fetch|"
+    r"rate limit exceeded|API rate limit|Sorry, an error occurred",
+    re.I,
+)
+
 BAD_PATTERNS = re.compile(
     r"badge not found|invalid\s+(color|value|query)|unable to (fetch|resolve)|"
     r"error:\s|repo not found|user not found|rate limit",
@@ -154,6 +161,12 @@ def main() -> int:
         elif contrast_risk(body):
             print(f"WARN low text contrast in SVG  {short}")
             warns += 1
+        elif ERROR_CARD.search(body):
+            # e.g. `count_private=true` on the public instance makes
+            # github-readme-stats render "Something went wrong! Could not fetch
+            # total commits." — HTTP 200, so only the body reveals it.
+            print(f"FAIL 200 but the SVG is an ERROR card  {short}")
+            fails += 1
         else:
             kb = len(body) // 1024
             print(f"OK   200 svg ({kb} KB)  {short}")
