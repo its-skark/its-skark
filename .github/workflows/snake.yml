@@ -77,6 +77,31 @@ jobs:
           git commit -m "chore: refresh contribution snake"
           git push
 
+      - name: Refresh the static repo-count badge
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # shields.io's live `github/repos` endpoint currently returns
+          # "badge not found" for every user, so the badge has to be a static
+          # value. Keep it honest by rewriting it from the API on each run
+          # instead of letting it silently go stale.
+          COUNT=$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/users/${{ github.repository_owner }} \
+            | python3 -c 'import json,sys; print(json.load(sys.stdin)["public_repos"])')
+          echo "public_repos = $COUNT"
+          python3 - "$COUNT" <<'PY'
+          import re, sys
+          count = sys.argv[1]
+          p = "README.md"
+          s = open(p, encoding="utf-8").read()
+          new = re.sub(r'(badge/repos-)\d+', rf'\g<1>{count}', s)
+          if new != s:
+              open(p, "w", encoding="utf-8").write(new)
+              print(f"repo badge -> {count}")
+          else:
+              print("repo badge already current")
+          PY
+
       - name: Cache-bust the snake image in README.md
         env:
           SHA: ${{ github.sha }}
