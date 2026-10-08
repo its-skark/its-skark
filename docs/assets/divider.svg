@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="40" viewBox="0 0 880 40" fill="none" role="img" aria-label="Section divider">
+  <defs>
+    <linearGradient id="dl" x1="0" y1="0" x2="880" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6" stop-opacity="0"/>
+      <stop offset=".28" stop-color="#8B5CF6" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#22D3EE"/>
+      <stop offset=".72" stop-color="#34D399" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
+    </linearGradient>
+    <style>
+      @keyframes pulse { 0%,100%{opacity:.5} 50%{opacity:1} }
+      .d { animation: pulse 4s ease-in-out infinite; }
+    </style>
+  </defs>
+  <rect x="0" y="19.25" width="880" height="1.5" rx=".75" fill="url(#dl)"/>
+  <rect class="d" x="436" y="15" width="8" height="8" rx="2" transform="rotate(45 440 19)" fill="#22D3EE"/>
+  <circle cx="120" cy="20" r="2.5" fill="#8B5CF6" opacity=".8"/>
+  <circle cx="760" cy="20" r="2.5" fill="#34D399" opacity=".8"/>
+</svg>

@@ -92,6 +92,9 @@ if python3 tools/check_caret_alignment.py; then ok "caret"; else bad "caret"; fi
 step "Status banner layout (no clipped text)"
 if python3 tools/check_status_layout.py; then ok "status layout"; else bad "status layout"; fi
 
+step "Published site/ matches its sources"
+if python3 tools/publish_site.py --check; then ok "site sync"; else bad "site sync"; fi
+
 step "GitHub rendering rules (lint_readme)"
 if python3 tools/lint_readme.py; then ok "readme lints clean"; else bad "readme lint"; fi
 
