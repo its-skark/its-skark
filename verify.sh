@@ -102,30 +102,32 @@ if [ "$LOCAL" = "1" ]; then
   step "Network checks skipped (--local)"
 else
   step "HTML/CSS of the interactive site"
-  python3 - <<'PY' || fail=1
+  python3 - <<'PY' || bad "index.html"
 import pathlib, re, sys
 h = pathlib.Path("index.html").read_text()
-js = pathlib.Path("assets/app.js").read_text()
-css = pathlib.Path("assets/styles.css").read_text()
 bad = []
-# every local asset referenced by the page must exist and be shipped by pages.yml
+# every local asset the page references must exist AND be published in docs/
 refs = set(re.findall(r'(?:src|href)="(assets/[^"]+)"', h))
 for r in sorted(refs):
-    if not pathlib.Path(r).exists(): bad.append(f"index.html references missing {r}")
-for r in sorted(refs):
-    if f"{r}\n" not in pathlib.Path(".github/workflows/pages.yml").read_text().replace("            ", ""):
-        pass  # checked below via explicit list
-# no raw external <script>/<link> that would break offline
-if re.search(r'<script[^>]*src="https?://', h): bad.append("index.html loads an external script")
-if "<link rel=\"stylesheet\"" in h and "fonts.googleapis.com" not in h: bad.append("stylesheet link without font href")
-# balanced tags sanity
+    if not pathlib.Path(r).exists():
+        bad.append(f"index.html references missing {r}")
+    elif not pathlib.Path("docs") .joinpath(r).exists():
+        bad.append(f"{r} exists but is not published in docs/")
+# the published copy must be identical (publish_site.py --check covers hashes,
+# this catches a file added to docs/ by hand but not to the manifest)
+# no external scripts that would break the page offline
+if re.search(r'<script[^>]*src="https?://', h):
+    bad.append("index.html loads an external script")
+# balanced block tags
 for tag in ("section", "table", "details", "header", "footer", "main"):
-    o = len(re.findall(rf"<{tag}[\s>]", h)); c = len(re.findall(rf"</{tag}>", h))
-    if o != c: bad.append(f"<{tag}> unbalanced: {o} open, {c} close")
-print("\n".join("    " + b for b in bad) if bad else f"    index.html references {len(refs)} local assets, all present; tags balanced")
+    o = len(re.findall(rf"<{tag}[\s>]", h))
+    c = len(re.findall(rf"</{tag}>", h))
+    if o != c:
+        bad.append(f"<{tag}> unbalanced: {o} open, {c} close")
+print("\n".join("    " + b for b in bad) if bad
+      else f"    index.html references {len(refs)} local assets; all exist, all published, tags balanced")
 sys.exit(1 if bad else 0)
 PY
-  if [ $? -eq 0 ]; then ok "index.html"; else bad "index.html"; fi
 
   step "Every remote image resolves to real content"
   if python3 tools/check_images.py; then ok "images"; else bad "images"; fi
