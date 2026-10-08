@@ -307,7 +307,7 @@ Python scraping utilities. <b>voxelEngine</b>, <b>router-cli</b> (Go) and
 </td>
 </tr>
 <tr>
-<td valign="top"><b>SCPPS</b><br /><sub>2022 → 2024 · Lucknow</sub></td>
+<td valign="top"><b>SCPPS</b><br /><sub>2022 → 2024 · Pantnagar</sub></td>
 <td valign="top">
 <b>Technical Committee Lead</b>
 <ul>
