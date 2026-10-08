@@ -115,9 +115,9 @@ python3 tools/gen_typing_svg.py assets  # assets/typing.svg
 `assets/hero.svg`, `status.svg`, `divider.svg` and `favicon.svg` are
 hand-authored and edited directly.
 
-### Two bugs worth remembering
+### Bugs worth remembering
 
-Both were found by rendering the SVGs locally, not by reading the code:
+All found by rendering the SVGs locally and measuring, not by reading the code:
 
 1. **`keyTimes` must be fractions in `[0,1]`, not percentages.** Writing `3.365`
    instead of `0.03365` makes the whole `<animate>` invalid; browsers ignore it
@@ -128,6 +128,24 @@ Both were found by rendering the SVGs locally, not by reading the code:
    frame before animations start — a static rasteriser, a PDF export, reduced
    motion — shows no text at all. Artwork that must always be legible should
    only animate non-essential decoration.
+3. **Never measure glyphs by estimating the advance.** The typewriter caret used
+   to rest at `X + width − PAD + 2`, where `width` came from an assumed `0.6em`
+   monospace advance. That guess drifts — most on lines containing `·`, which is
+   wider in most system mono fonts. The fix is `textLength` +
+   `lengthAdjust="spacing"` on every line, which forces the renderer to use
+   exactly the computed width no matter which font resolves. The caret is then
+   exactly flush (`−1px`) on every line.
+4. **Baseline + descender must be inside the viewBox.** `status.svg` had row 3's
+   sub-line baseline at `y=193`; descenders reached ~`198` in a 196-tall card, so
+   the border cut the text mid-glyph. It looked like stray/garbled characters.
+5. **XML comments cannot contain `--`.** Two separate edits were rejected by the
+   parser for writing `---------- section ----------` and `line -- keep it`
+   inside comments. Browsers parse SVG strictly, so that is a hard parse error.
+6. **A static caret plus an animated caret = two cursors.** The typewriter had a
+   permanent caret next to `$` *and* per-line carets. Only one should exist.
+7. **Unequal bar widths imply data that does not exist.** The three "progress"
+   bars were 300/248/176px — that reads as 100/83/59% progress for no reason.
+   They are now uniform animated accents over a faint track.
 
 ---
 
@@ -148,8 +166,19 @@ python3 tools/preview_readme.py  # render via GitHub's own markup API
 
 `verify.sh` checks: every SVG parses as strict XML, every SMIL animation has
 valid `keyTimes`, no text depends on an animation to become visible, every
-`assets/` reference exists, the README passes the rendering lint, all 56 remote
-images return real SVG, and GitHub's own renderer produces zero tag leaks.
+`assets/` reference exists, the typewriter caret sits flush on each line with a
+single cursor, the status banner's rows clear its border, the README passes the
+rendering lint, all 56 remote images return real SVG, and GitHub's own renderer
+produces zero tag leaks.
+
+Two of those checks exist only because a bug slipped through once:
+
+- `tools/check_caret_alignment.py` asserts `caret_rest_x == X + textLength - 1`
+  for every line, and that no static prompt caret remains.
+- `tools/check_status_layout.py` asserts every sub-line's descender is inside
+  the card, bars are centred on their rows, and bar widths are uniform.
+
+Both were tested by reintroducing the original bug to confirm they fail.
 
 **`preview_readme.py` is the important one.** It POSTs `README.md` to
 `api.github.com/markdown` — the same pipeline that serves github.com — and
@@ -226,6 +255,8 @@ tools/
   gen_typing_svg.py          generates typing.svg
   lint_readme.py             catches GitHub rendering mistakes
   check_images.py            verifies every image URL
+  check_caret_alignment.py   caret sits flush, single cursor
+  check_status_layout.py     no clipped text, bars centred
   preview_readme.py          renders via GitHub's markup API
 .github/workflows/
   pages.yml                  deploy the interactive site

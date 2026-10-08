@@ -32,10 +32,17 @@ LINES: list[tuple[str, str]] = [
 
 SIZE = 21          # px
 LH = 34            # line height
-X = 56             # text origin
+X = 44             # text origin (just after the "$ " prompt)
 TOP = 30           # first baseline
-ADV = 0.6          # monospace advance ratio (em)
-PAD = 12           # clip slack so the final glyph is never cut
+ADV = 0.6          # monospace advance ratio (em) used as a *fixed* width
+PAD = 10           # clip slack so the final glyph is never cut
+
+# Every line is emitted with textLength + lengthAdjust="spacing", which forces
+# the renderer to make the line occupy exactly len(text) * SIZE * ADV px
+# whatever font actually resolves. Without it the caret can only guess where
+# the last glyph ends, and it drifted a few px right — most visibly on the lines
+# containing "·", which is wider than the assumed advance in most system
+# monospace fonts.
 
 # ---- single shared timeline (seconds) --------------------------------------
 TYPE_START = 0.35     # when typing begins
@@ -48,7 +55,9 @@ TOTAL = 10.4          # one full loop, then repeat
 
 BG_W = 790
 BG_H = TOP + LH * (len(LINES) - 1) + 30
-WIDTHS = [len(t) * SIZE * ADV + PAD for t, _ in LINES]
+# exact text box per line; the clip is that width plus a hair of slack
+TEXT_W = [len(t) * SIZE * ADV for t, _ in LINES]
+WIDTHS = [w + PAD for w in TEXT_W]
 
 
 def frac(t: float) -> str:
@@ -62,6 +71,7 @@ def line_xml(i: int) -> str:
     """One line: clip rect + caret, both driven by the same shared keyTimes."""
     text, color = LINES[i]
     w = WIDTHS[i]
+    tw = TEXT_W[i]
     y = TOP + i * LH
 
     t0 = TYPE_START + i * STAGGER          # typing starts
@@ -73,8 +83,12 @@ def line_xml(i: int) -> str:
     vals = f"0;0;{w:.1f};{w:.1f};0;0"
     keytimes = ";".join(frac(t) for t in times)
 
-    # caret travels with the clip edge and fades out once the line is erased
-    caret_x = [X - 6, X - 6, X + w - PAD + 2, X + w - PAD + 2, X - 6, X - 6]
+    # The caret must stop exactly where the text stops: X + textWidth. Using the
+    # clip width (which carries PAD slack) here is what pushed it past the last
+    # glyph before.
+    caret_home = X - 6                       # parked at the prompt, before typing
+    caret_end = X + tw - 1                   # flush against the last glyph
+    caret_x = [caret_home, caret_home, caret_end, caret_end, caret_home, caret_home]
     caret_o = "0;1;1;1;0;0"
     ctimes = ";".join([
         frac(0), frac(max(t0 - 0.05, 0)), frac(t0 + 0.25), frac(e0),
@@ -91,9 +105,10 @@ def line_xml(i: int) -> str:
     </clipPath>
     <g clip-path="url(#clip{i})">
       <text class="mono" x="{X}" y="{y}" font-size="{SIZE}" fill="{color}"
+            textLength="{tw:.1f}" lengthAdjust="spacing"
             xml:space="preserve">{escape(text)}</text>
     </g>
-    <rect x="{X - 6}" y="{y - SIZE - 1}" width="10" height="{SIZE - 2}" rx="2" fill="#22D3EE" opacity="0">
+    <rect x="{caret_home:.1f}" y="{y - SIZE - 1}" width="10" height="{SIZE - 2}" rx="2" fill="#22D3EE" opacity="0">
       <animate attributeName="x" values="{' ; '.join(f'{v:.1f}' for v in caret_x).replace(' ; ', ';')}"
                keyTimes="{ctimes}" dur="{TOTAL}s" repeatCount="indefinite" calcMode="linear"/>
       <animate attributeName="opacity" values="{caret_o}" keyTimes="{ctimes}"
@@ -146,9 +161,12 @@ def build() -> str:
 
     <rect x="1" y="1" width="3" height="{BG_H - 2}" fill="url(#tg)"/>
 
-    <!-- shell prompt: static, always visible, never animated away -->
+    <!-- shell prompt: static, always visible, never animated away.
+         NOTE: there is deliberately NO caret next to the "$". Each line owns
+         the only caret and parks it at the prompt between phrases, which is
+         what a real shell does. A second static caret here rendered as two
+         cursors side by side. -->
     <text class="mono" x="18" y="{TOP}" font-size="{SIZE}" fill="#8B5CF6">$</text>
-    <rect class="caret" x="{X - 6}" y="{TOP - SIZE - 1}" width="10" height="{SIZE - 2}" rx="2" fill="#22D3EE" opacity=".9"/>
 
     {lines}
   </g>

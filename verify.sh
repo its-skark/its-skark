@@ -86,6 +86,12 @@ print("    every assets/*.svg referenced by the README exists")
 PY
 if [ $? -eq 0 ]; then ok "local assets"; else bad "local assets"; fi
 
+step "Typewriter caret alignment"
+if python3 tools/check_caret_alignment.py; then ok "caret"; else bad "caret"; fi
+
+step "Status banner layout (no clipped text)"
+if python3 tools/check_status_layout.py; then ok "status layout"; else bad "status layout"; fi
+
 step "GitHub rendering rules (lint_readme)"
 if python3 tools/lint_readme.py; then ok "readme lints clean"; else bad "readme lint"; fi
 

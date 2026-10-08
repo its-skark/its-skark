@@ -91,11 +91,11 @@
 
     <!-- text block -->
     <g class="sans">
-      <!-- availability pill -->
+      <!-- availability pill: LinkedIn "Open to Work" styling (#0A66C2) -->
       <g>
-        <rect x="64" y="62" width="286" height="34" rx="17" fill="#34D399" fill-opacity=".08" stroke="#34D399" stroke-opacity=".3"/>
-        <circle class="halo" cx="86" cy="79" r="5" fill="#34D399"/>
-        <text class="mono" x="102" y="84" font-size="12.5" fill="#6EE7B7" letter-spacing=".5">open to opportunities</text>
+        <rect x="64" y="62" width="188" height="34" rx="6" fill="#0A66C2"/>
+        <circle class="halo" cx="86" cy="79" r="5" fill="#FFFFFF"/>
+        <text class="sans" x="102" y="84" font-size="13" font-weight="600" fill="#FFFFFF" letter-spacing=".1">Open to Work</text>
       </g>
 
       <!-- name -->
@@ -140,7 +140,11 @@
       <rect class="caret" x="146" y="340" width="9" height="16" rx="2" fill="#22D3EE"/>
     </g>
 
-    <!-- monogram badge -->
+    <!-- GitHub avatar: base64-embedded because SVG loaded through <img> cannot
+         fetch remote resources. This is the account identicon (420x420 PNG,
+         1515 bytes) captured from https://github.com/its-skark.png. To use a
+         real photo after uploading one to GitHub, replace ONLY the base64 on
+         the next line; keep it a single unbroken line. -->
     <g>
       <circle cx="1046" cy="190" r="96" fill="#0D1119" stroke="#FFFFFF" stroke-opacity=".1"/>
       <circle cx="1046" cy="190" r="118" fill="none" stroke="#22D3EE" stroke-opacity=".22" stroke-dasharray="5 12">
@@ -150,12 +154,14 @@
         <animateTransform attributeName="transform" type="rotate" from="360 1046 190" to="0 1046 190" dur="48s" repeatCount="indefinite"/>
       </circle>
       <defs>
-        <linearGradient id="monoGrad" x1="980" y1="140" x2="1112" y2="240" gradientUnits="userSpaceOnUse">
+        <clipPath id="avatarClip"><circle cx="1046" cy="190" r="88"/></clipPath>
+        <linearGradient id="avatarRing" x1="980" y1="140" x2="1112" y2="240" gradientUnits="userSpaceOnUse">
           <stop stop-color="#8B5CF6"/><stop offset=".55" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/>
         </linearGradient>
       </defs>
-      <circle cx="1046" cy="190" r="88" fill="url(#monoGrad)"/>
-      <text class="sans" x="1046" y="205" font-size="62" font-weight="700" fill="#07090D" text-anchor="middle" letter-spacing="-2">RP</text>
+      <image x="958" y="102" width="176" height="176" preserveAspectRatio="xMidYMid slice"
+             clip-path="url(#avatarClip)" href="data:image/png;base64,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" />
+      <circle cx="1046" cy="190" r="89.5" fill="none" stroke="url(#avatarRing)" stroke-width="3"/>
     </g>
   </g>
 

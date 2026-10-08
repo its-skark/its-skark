@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="196" viewBox="0 0 900 196" fill="none" role="img" aria-label="Currently: building at Bilwg Services, AI tooling, open to roles">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="216" viewBox="0 0 900 216" fill="none" role="img" aria-label="Currently: building at Bilwg Services, AI tooling, open to roles">
   <title>Currently</title>
   <defs>
     <linearGradient id="sbg" x1="0" y1="0" x2="900" y2="196" gradientUnits="userSpaceOnUse">
@@ -10,7 +10,7 @@
     <radialGradient id="sglow" cx=".5" cy=".5" r=".5">
       <stop stop-color="#8B5CF6" stop-opacity=".3"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
     </radialGradient>
-    <clipPath id="sclip"><rect x="1" y="1" width="898" height="194" rx="16"/></clipPath>
+    <clipPath id="sclip"><rect x="1" y="1" width="898" height="214" rx="16"/></clipPath>
     <style>
       @keyframes grow { from { transform: scaleX(0) } to { transform: scaleX(1) } }
       @keyframes blink { 0%,48%{opacity:1} 49%,100%{opacity:0} }
@@ -43,19 +43,19 @@
       <text class="mono" x="28" y="76" font-size="15" fill="#8B5CF6">01</text>
       <text x="66" y="76" font-size="15" fill="#E9EDF6">Building multi-tenant POS &amp; storefront platforms</text>
       <text class="mono" x="66" y="97" font-size="12" fill="#6C7689">angular · express · postgres · docker</text>
-      <rect class="grow g1" x="530" y="70" width="300" height="4" rx="2" fill="#8B5CF6" fill-opacity=".35"/>
+      <rect x="530" y="84.5" width="300" height="4" rx="2" fill="#FFFFFF" fill-opacity=".07"/><rect class="grow g1" x="530" y="84.5" width="300" height="4" rx="2" fill="#8B5CF6" fill-opacity=".55"/>
 
       <text class="mono" x="28" y="124" font-size="15" fill="#22D3EE">02</text>
       <text x="66" y="124" font-size="15" fill="#E9EDF6">Building AI repo-intelligence engine (SkillFlow)</text>
       <text class="mono" x="66" y="145" font-size="12" fill="#6C7689">python · tree-sitter · semgrep · fastapi</text>
-      <rect class="grow g2" x="530" y="118" width="248" height="4" rx="2" fill="#22D3EE" fill-opacity=".35"/>
+      <rect x="530" y="132.5" width="300" height="4" rx="2" fill="#FFFFFF" fill-opacity=".07"/><rect class="grow g2" x="530" y="132.5" width="300" height="4" rx="2" fill="#22D3EE" fill-opacity=".55"/>
 
       <text class="mono" x="28" y="172" font-size="15" fill="#34D399">03</text>
       <text x="66" y="172" font-size="15" fill="#E9EDF6">Open to full-stack &amp; AI engineering roles</text>
       <text class="mono" x="66" y="193" font-size="12" fill="#6C7689">lucknow, in · remote / hybrid</text>
-      <rect class="grow g3" x="530" y="166" width="176" height="4" rx="2" fill="#34D399" fill-opacity=".35"/>
+      <rect x="530" y="180.5" width="300" height="4" rx="2" fill="#FFFFFF" fill-opacity=".07"/><rect class="grow g3" x="530" y="180.5" width="300" height="4" rx="2" fill="#34D399" fill-opacity=".55"/>
     </g>
   </g>
 
-  <rect x="1" y="1" width="898" height="194" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <rect x="1" y="1" width="898" height="214" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/>
 </svg>
