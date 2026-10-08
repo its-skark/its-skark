@@ -1,0 +1,101 @@
+# Contributing-snake animation — self-hosted
+#
+# WHY NOT the usual Platane/snk setup:
+#   The popular approach pulls a pre-built SVG from Platane's repo on raw.github.
+#   That works, but it is a third-party dependency on a branch that someone else
+#   controls. This workflow builds the animation ourselves and commits it into
+#   this repo, so `assets/snake.svg` is versioned alongside the rest of the design
+#   and cannot break when someone else's deployment does.
+#
+# WHY CACHE-BUSTING IS REQUIRED:
+#   GitHub proxies README images through Camo and caches them aggressively. A
+#   freshly committed SVG at the SAME url would keep showing the stale version.
+#   Adding a ?v=<commit-sha> to the image src in README.md changes the url, so
+#   Camo treats it as a cache miss. This workflow rewrites that query string on
+#   every run.
+#
+#   Because it modifies README.md, it needs write permissions:
+#   repo Settings -> Actions -> General -> Workflow permissions -> Read and write
+
+name: Generate contribution snake
+
+on:
+  schedule:
+    # GitHub cron is UTC. 03:17 avoids the stampede at the top of the hour.
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate snake SVG from contribution data
+        uses: Platane/snk@v3
+        id: snake
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/output/github-contribution-grid-snake.svg
+            dist/output/github-contribution-grid-snake-dark.svg
+
+      - name: Store the generated SVGs on the runner
+        run: |
+          mkdir -p assets
+          cp dist/output/github-contribution-grid-snake.svg        assets/snake.svg
+          cp dist/output/github-contribution-grid-snake-dark.svg   assets/snake-dark.svg
+          ls -la assets/snake*.svg
+
+      - name: Validate the output is real SVG (not an error page)
+        run: |
+          set -e
+          for f in assets/snake.svg assets/snake-dark.svg; do
+            head -c 400 "$f" | grep -q '<svg' || { echo "::error::$f is not SVG"; exit 1; }
+            echo "$f OK ($(wc -c < "$f") bytes)"
+          done
+
+      - name: Commit the SVGs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/snake.svg assets/snake-dark.svg
+          if git diff --staged --quiet; then
+            echo "no change in contribution data"
+            exit 0
+          fi
+          git commit -m "chore: refresh contribution snake"
+          git push
+
+      - name: Cache-bust the snake image in README.md
+        env:
+          SHA: ${{ github.sha }}
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, re
+          sha = os.environ["SHA"][:7]
+          p = pathlib.Path("README.md")
+          s = p.read_text(encoding="utf-8")
+          # Append a fresh ?v=<sha> so Camo treats it as a new URL and refetches.
+          s = re.sub(r'assets/snake(-dark)?\.svg(?:\?v=[0-9a-f]+)?',
+                     lambda m: f'assets/snake{m.group(1) or ""}.svg?v={sha}', s)
+          p.write_text(s, encoding="utf-8")
+          print(f"cache-busted snake images to v={sha}")
+          PY
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "README already up to date"
+          else
+            git commit -m "chore: cache-bust snake image"
+            git push
+          fi

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="96" viewBox="0 0 880 96" fill="none" role="img" aria-label="Contribution snake animation is generated daily by GitHub Actions">
+  <title>Contribution snake</title>
+  <desc>Placeholder shown until the snake workflow runs. It renders on this repository a few seconds after you push, then refreshes daily.</desc>
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="880" y2="96" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1017"/><stop offset="1" stop-color="#080A10"/>
+    </linearGradient>
+    <linearGradient id="pl" x1="0" y1="0" x2="880" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/><stop offset=".5" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <style>
+      @keyframes dash { to { stroke-dashoffset: -400 } }
+      .l { stroke-dasharray: 6 10; animation: dash 9s linear infinite; }
+      @keyframes pulse { 0%,100%{opacity:.45} 50%{opacity:1} }
+      .d { animation: pulse 3s ease-in-out infinite; }
+    </style>
+  </defs>
+  <rect width="880" height="96" rx="14" fill="url(#pbg)"/>
+  <rect x="1" y="1" width="878" height="94" rx="14" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <rect x="1" y="1" width="878" height="2" rx="1" fill="url(#pl)" opacity=".8"/>
+  <text x="440" y="46" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="14" fill="#97A1B5">contribution snake</text>
+  <text x="440" y="68" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="11.5" fill="#6C7689">generated daily by GitHub Actions — appears here after the first run</text>
+  <line class="l" x1="20" y1="84" x2="860" y2="84" stroke="#22D3EE" stroke-width="1.5" stroke-opacity=".5"/>
+  <circle class="d" cx="880" cy="84" r="2.5" fill="#34D399"/>
+</svg>

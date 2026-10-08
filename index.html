@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rachit Pandey — Full-Stack TypeScript &amp; AI Engineer</title>
+<meta name="description" content="Rachit Pandey — Software Developer building production SaaS, POS platforms and AI tooling with TypeScript, Angular, React, Node.js, Python and AWS." />
+<meta name="theme-color" content="#07090d" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Rachit Pandey — Full-Stack TypeScript & AI Engineer" />
+<meta property="og:description" content="Production SaaS, POS platforms and AI tooling. TypeScript · Angular · React · Node.js · Python · AWS." />
+<meta property="og:image" content="https://its-skark.github.io/assets/og.png" />
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+
+<!-- ══════════════════════════ NAV ══════════════════════════ -->
+<header class="nav">
+  <a class="brand" href="#top">
+    <span class="mark">RP</span>
+    <span>its-skark<small>full-stack · ai · cloud</small></span>
+  </a>
+
+  <nav class="nav-links">
+    <a href="#about">About</a>
+    <a href="#stack">Stack</a>
+    <a href="#work">Work</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="nav-cta">
+    <a class="btn btn--primary btn--sm" href="https://github.com/its-skark" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      GitHub
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <span class="status"><i class="dot"></i> Software Developer @ Bilwg Services · Open to opportunities</span>
+
+      <h1>Hi, I'm <span class="grad-text">Rachit</span><br />I build things<br />that <span class="grad-text">ship.</span></h1>
+
+      <p class="role-line">
+        <span class="role-prefix">&gt;</span>
+        <span class="role-swap" data-role-swap data-roles="full-stack typescript engineer|angular + react product builder|node · postgres · apis that hold up|python + aws bedrock for AI tooling|linux kernel tinkerer"></span>
+      </p>
+
+      <p class="lead">
+        <strong>B.Tech IT</strong> engineer (2026) turning messy real-world problems into production systems —
+        multi-tenant POS platforms, policy portals, e-commerce platforms and an AI engine that reads code for a living.
+        I care about clean TypeScript, boring infrastructure and interfaces that don't fight the user.
+      </p>
+
+      <div class="hero-meta">
+        <span class="pill"><i style="--dot:var(--cyan)"></i> Lucknow, India</span>
+        <span class="pill"><i style="--dot:var(--violet)"></i> B.Tech IT · graduated 2026</span>
+        <span class="pill"><i style="--dot:var(--emerald)"></i> Remote · Hybrid</span>
+        <span class="pill"><i style="--dot:var(--amber)"></i> Open to opportunities</span>
+      </div>
+
+      <div class="hero-cta">
+        <a class="btn btn--primary" href="https://github.com/its-skark" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+          View GitHub
+        </a>
+        <a class="btn" href="#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          Featured work
+        </a>
+        <a class="btn btn--ghost" href="mailto:rachit_pandey2004@outlook.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+          Email me
+        </a>
+      </div>
+
+      <!-- typing terminal -->
+      <div class="terminal" aria-label="Terminal intro">
+        <div class="terminal-bar">
+          <i></i><i></i><i></i><span>~/rachit — zsh</span>
+        </div>
+        <pre data-terminal data-script="$ whoami
+rachit — full-stack dev · Lucknow, IN
+$ cat focus.txt
+typescript · angular · react · node · postgres · aws
+$ git log --oneline -3
+a1f9c2d  feat(pos): multi-tenant billing + offline sync
+7b3e104  feat(ai): tree-sitter repo intelligence pipeline
+c40d8ba  chore: ship it and profile it
+$ npx whoami --social
+https://github.com/its-skark"></pre>
+      </div>
+    </div>
+
+    <!-- avatar -->
+    <div class="avatar" aria-hidden="true">
+      <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+      <div class="core">RP<span>since 2020</span></div>
+      <span class="orbit-tag orbit-tag--1">typescript://strict</span>
+      <span class="orbit-tag orbit-tag--2">aws · ec2 · s3</span>
+      <span class="orbit-tag orbit-tag--3">build: passing ✓</span>
+    </div>
+  </div>
+
+  <!-- stat strip -->
+  <div class="wrap">
+    <div class="stats">
+      <div class="card card--edge card--spot stat reveal">
+        <b data-count="19" data-suffix="19">19</b>
+        <span>public repos</span>
+      </div>
+      <div class="card card--edge card--spot stat reveal" data-delay="80">
+        <b data-count="7" data-suffix="7+">7+</b>
+        <span>products shipped</span>
+      </div>
+      <div class="card card--edge card--spot stat reveal" data-delay="160">
+        <b data-count="3638" data-suffix="#3,638">#3,638</b>
+        <span>global · CodeVita</span>
+      </div>
+      <div class="card card--edge card--spot stat reveal" data-delay="240">
+        <b data-count="100000" data-suffix="100k+">100k+</b>
+        <span>competitors</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ MARQUEE ══════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span><b></b>TypeScript</span><span><b></b>Angular</span><span><b></b>React</span><span><b></b>Node.js</span>
+    <span><b></b>Express</span><span><b></b>PostgreSQL</span><span><b></b>Python</span><span><b></b>FastAPI</span>
+    <span><b></b>AWS Bedrock</span><span><b></b>Docker</span><span><b></b>Nginx</span><span><b></b>PrimeNG</span>
+    <span><b></b>Tailwind</span><span><b></b>tree-sitter</span><span><b></b>Redis</span><span><b></b>Next.js</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════ ABOUT ══════════════════════════ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">01 — about</span>
+        <h2 class="grad-text">Engineer who ships, not just demos</h2>
+      </div>
+      <p>// whoami --verbose</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="card card--edge card--spot about reveal">
+        <p>
+          I build <strong>production web systems</strong> — the kind with tenants, migrations, payment webhooks,
+          role-based access and a support ticket that says "it works on my machine". My day job is writing
+          Angular front-ends and Node/Express services behind multi-tenant POS products used by real restaurants,
+          hotels and laundries.
+        </p>
+        <p>
+          On the side I work on <strong>AI-assisted developer tooling</strong>: an engine that parses repositories with
+          tree-sitter, runs semgrep rules and scores code quality to help recruiters screen beyond a CV.
+          I've also compiled and maintained a custom <strong>Linux kernel</strong> for a Poco device, which is a very
+          different flavour of "it won't boot".
+        </p>
+        <p>
+          I like boring, well-named code. Explicit schemas over clever inference, boring infrastructure over
+          heroics, and documentation that survives the next sprint.
+        </p>
+
+        <div class="chips" style="margin-top:22px">
+          <span class="pill"><i style="--dot:var(--cyan)"></i> Code review culture</span>
+          <span class="pill"><i style="--dot:var(--violet)"></i> Testing &amp; CI</span>
+          <span class="pill"><i style="--dot:var(--emerald)"></i> API design</span>
+          <span class="pill"><i style="--dot:var(--amber)"></i> Postgres modelling</span>
+        </div>
+      </div>
+
+      <div class="focus-list">
+        <div class="focus reveal" style="--c:var(--violet)">
+          <span class="ico">◧</span>
+          <div>
+            <h4>Production SaaS</h4>
+            <p>Multi-tenant POS suites, booking &amp; billing flows, offline-tolerant front-ends and admin consoles.</p>
+          </div>
+        </div>
+        <div class="focus reveal" data-delay="70" style="--c:var(--cyan)">
+          <span class="ico">◎</span>
+          <div>
+            <h4>AI &amp; code intelligence</h4>
+            <p>tree-sitter multi-language AST parsing, semgrep static analysis, MCP tooling and AWS Bedrock prompts.</p>
+          </div>
+        </div>
+        <div class="focus reveal" data-delay="140" style="--c:var(--emerald)">
+          <span class="ico">⛁</span>
+          <div>
+            <h4>Cloud &amp; DevOps</h4>
+            <p>EC2 + S3 + DynamoDB, Nginx reverse proxies, Docker builds, Stripe/Razorpay webhooks, Zod validation.</p>
+          </div>
+        </div>
+        <div class="focus reveal" data-delay="210" style="--c:var(--amber)">
+          <span class="ico">⌘</span>
+          <div>
+            <h4>Interface craft</h4>
+            <p>Angular + PrimeNG and React + Tailwind screens that stay fast, accessible and consistent under load.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ STACK ══════════════════════════ -->
+<section class="section" id="stack">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">02 — stack</span>
+        <h2 class="grad-text">The toolbox</h2>
+      </div>
+      <p>// every day, all day</p>
+    </div>
+
+    <div class="stack-grid">
+
+      <div class="card card--edge card--spot stack-card reveal" style="--c:var(--cyan)">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h18v18H3z" opacity=".15"/><path d="M4.5 6h15M4.5 10h15M4.5 14h9"/></svg>
+          Frontend
+        </h3>
+        <div class="bar-row"><div class="top"><span>TypeScript</span><em>core language</em></div><div class="bar"><i data-level="94"></i></div></div>
+        <div class="bar-row"><div class="top"><span>Angular</span><em>20 · PrimeNG · RxJS</em></div><div class="bar"><i data-level="90"></i></div></div>
+        <div class="bar-row"><div class="top"><span>React</span><em>18 · Next · Zustand</em></div><div class="bar"><i data-level="86"></i></div></div>
+        <div class="chips">
+          <span class="pill"><i style="--dot:#3178c6"></i> HTML</span><span class="pill"><i style="--dot:#3178c6"></i> CSS</span>
+          <span class="pill"><i style="--dot:#38bdf8"></i> Tailwind</span><span class="pill"><i style="--dot:#a78bfa"></i> Zustand</span>
+          <span class="pill"><i style="--dot:#f472b6"></i> ApexCharts</span><span class="pill"><i style="--dot:#fb923c"></i> Vite</span>
+        </div>
+      </div>
+
+      <div class="card card--edge card--spot stack-card reveal" data-delay="70" style="--c:var(--emerald)">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          Backend &amp; Data
+        </h3>
+        <div class="bar-row"><div class="top"><span>Node.js / Express</span><em>rest · jwt · zod</em></div><div class="bar"><i data-level="92"></i></div></div>
+        <div class="bar-row"><div class="top"><span>PostgreSQL</span><em>schema · indexing</em></div><div class="bar"><i data-level="84"></i></div></div>
+        <div class="bar-row"><div class="top"><span>Python</span><em>fastapi · asyncio</em></div><div class="bar"><i data-level="82"></i></div></div>
+        <div class="chips">
+          <span class="pill"><i style="--dot:#4169e1"></i> PostgreSQL</span><span class="pill"><i style="--dot:#4db33d"></i> MongoDB</span>
+          <span class="pill"><i style="--dot:#dc382d"></i> Redis</span><span class="pill"><i style="--dot:#646cff"></i> SQLite</span>
+          <span class="pill"><i style="--dot:#fbbf24"></i> Jest · Supertest</span>
+        </div>
+      </div>
+
+      <div class="card card--edge card--spot stack-card reveal" data-delay="140" style="--c:var(--violet)">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18a5 5 0 0 1-.7-9.95A6.5 6.5 0 0 1 18.5 9.5 4.25 4.25 0 0 1 18 18H7Z"/><path d="M9 21h6"/></svg>
+          Cloud &amp; Infra
+        </h3>
+        <div class="bar-row"><div class="top"><span>AWS</span><em>ec2 · s3 · dynamodb · bedrock</em></div><div class="bar"><i data-level="78"></i></div></div>
+        <div class="bar-row"><div class="top"><span>Docker</span><em>images · compose</em></div><div class="bar"><i data-level="72"></i></div></div>
+        <div class="bar-row"><div class="top"><span>Linux &amp; Nginx</span><em>reverse proxy · tuning</em></div><div class="bar"><i data-level="80"></i></div></div>
+        <div class="chips">
+          <span class="pill"><i style="--dot:#ff9900"></i> AWS</span><span class="pill"><i style="--dot:#2496ed"></i> GCP Storage</span>
+          <span class="pill"><i style="--dot:#61dafb"></i> Firebase</span><span class="pill"><i style="--dot:#2496ed"></i> Docker</span>
+          <span class="pill"><i style="--dot:#f59e0b"></i> Nginx</span>
+        </div>
+      </div>
+
+      <div class="card card--edge card--spot stack-card reveal" data-delay="210" style="--c:var(--amber)">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>
+          Craft &amp; Ops
+        </h3>
+        <div class="bar-row"><div class="top"><span>Git</span><em>branching · reviews</em></div><div class="bar"><i data-level="90"></i></div></div>
+        <div class="bar-row"><div class="top"><span>C / Linux internals</span><em>kernel · drivers</em></div><div class="bar"><i data-level="62"></i></div></div>
+        <div class="bar-row"><div class="top"><span>Payments</span><em>stripe · razorpay</em></div><div class="bar"><i data-level="75"></i></div></div>
+        <div class="chips">
+          <span class="pill"><i style="--dot:#f05032"></i> Git</span><span class="pill"><i style="--dot:#a8a9ad"></i> Linux</span>
+          <span class="pill"><i style="--dot:#635bff"></i> Stripe</span><span class="pill"><i style="--dot:#22c1c3"></i> Razorpay</span>
+          <span class="pill"><i style="--dot:#10b981"></i> OpenAPI</span><span class="pill"><i style="--dot:#e34c26"></i> PHP</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ EXPERIENCE ══════════════════════════ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">03 — experience</span>
+        <h2 class="grad-text">Where I've built things</h2>
+      </div>
+      <p>// git log --author="rachit"</p>
+    </div>
+
+    <div class="timeline">
+
+      <article class="card card--edge card--spot tl-item reveal">
+        <div class="tl-head">
+          <h3>Bilwg Services Pvt. Ltd.</h3>
+          <span class="tl-when">May 2026 → Present · Remote</span>
+        </div>
+        <p class="tl-role">Software Developer — full-stack product engineering</p>
+        <ul class="tl-list">
+          <li>Building and maintaining <b>Angular</b> front-end features for client-facing SaaS products, pairing with senior engineers on feature design and delivery.</li>
+          <li>Implementing <b>full-stack features in React and Express</b> across REST APIs, auth and data layers used by real customers.</li>
+          <li>Contributing to <b>code reviews, debugging, testing and deployments</b> — keeping quality high and regressions boring.</li>
+        </ul>
+        <div class="tag-row">
+          <span class="pill"><i style="--dot:var(--cyan)"></i> Angular</span><span class="pill"><i style="--dot:var(--emerald)"></i> Express</span>
+          <span class="pill"><i style="--dot:var(--violet)"></i> TypeScript</span><span class="pill"><i style="--dot:var(--amber)"></i> Code review</span>
+        </div>
+      </article>
+
+      <article class="card card--edge card--spot tl-item reveal" data-delay="70">
+        <div class="tl-head">
+          <h3>Delosch Technologies Pvt. Ltd.</h3>
+          <span class="tl-when">Jun 2025 → Aug 2025 · Hybrid</span>
+        </div>
+        <p class="tl-role">Full-Stack &amp; AI Engineering Intern</p>
+        <ul class="tl-list">
+          <li><b>AI automation:</b> engineered custom contexts and tuned prompt designs on <b>AWS Bedrock</b> to automate HR workflows and cut manual processing.</li>
+          <li><b>Full-stack:</b> shipped responsive Remix.js + React surfaces with a focus on cross-device performance.</li>
+          <li><b>Cloud:</b> integrated <b>S3</b> for scalable file storage and <b>DynamoDB</b> for high-performance NoSQL access.</li>
+          <li><b>DevOps:</b> stood up <b>EC2</b> instances, backend services and <b>Nginx reverse proxies</b> for secure, scalable delivery.</li>
+        </ul>
+        <div class="tag-row">
+          <span class="pill"><i style="--dot:var(--amber)"></i> AWS Bedrock</span><span class="pill"><i style="--dot:var(--cyan)"></i> Remix.js</span>
+          <span class="pill"><i style="--dot:var(--emerald)"></i> DynamoDB</span><span class="pill"><i style="--dot:var(--rose)"></i> Nginx</span>
+        </div>
+      </article>
+
+      <article class="card card--edge card--spot tl-item reveal" data-delay="140">
+        <div class="tl-head">
+          <h3>Swadeshi Vitta Salahakar Parishad (SCPPS)</h3>
+          <span class="tl-when">2022 → 2024 · Lucknow</span>
+        </div>
+        <p class="tl-role">Technical Committee Lead</p>
+        <ul class="tl-list">
+          <li>Architected and deployed the society's <b>official blog</b> and digital infrastructure.</li>
+          <li>Led a cross-functional team running web infrastructure for events with <b>500+ attendees</b>.</li>
+          <li>Set up the society's payments, member portal and document tooling.</li>
+        </ul>
+        <div class="tag-row">
+          <span class="pill"><i style="--dot:var(--violet)"></i> Leadership</span><span class="pill"><i style="--dot:var(--cyan)"></i> Web infra</span>
+          <span class="pill"><i style="--dot:var(--emerald)"></i> Community</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PROJECTS ══════════════════════════ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">04 — projects</span>
+        <h2 class="grad-text">Selected work</h2>
+      </div>
+      <p>// 19 repos · a few worth explaining</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Featured: SkillFlow -->
+      <article class="card card--edge card--spot proj proj--wide reveal" style="--c:var(--violet)">
+        <div class="split">
+          <div>
+            <span class="badge" style="--c:var(--violet)">flagship · b.tech major project</span>
+            <h3 style="margin:12px 0 10px"><a href="https://github.com/its-skark/SkillFlowApp" target="_blank" rel="noopener">SkillFlow — AI-powered technical hiring</a></h3>
+            <p>
+              A hiring platform that evaluates candidates on <em>repository intelligence</em> instead of resume keywords.
+              Candidates submit their strongest repos; the engine parses them, scores engineering practice and drives
+              the recruiter's pipeline from there.
+            </p>
+            <ul class="feature-list" style="margin-top:16px">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span><b>tree-sitter AST parsing</b> for C, Go, Java, JavaScript, Python, Ruby, Rust and TypeScript — real structure, not regex.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span><b>FastAPI service</b> with Pydantic schemas, OpenTelemetry tracing and an MCP server for agent tooling.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span><b>Configurable funnels</b>: stage transitions, automation rules, ATS filtering, scheduling and manual review.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span><b>semgrep static analysis</b> + weighted scoring across complexity, activity and language mix.</span></li>
+            </ul>
+            <div class="badges" style="margin-top:18px">
+              <span class="badge" style="--c:var(--violet)">Python</span><span class="badge" style="--c:var(--violet)">FastAPI</span>
+              <span class="badge" style="--c:var(--violet)">tree-sitter</span><span class="badge" style="--c:var(--violet)">semgrep</span>
+              <span class="badge" style="--c:var(--violet)">MySQL</span><span class="badge" style="--c:var(--violet)">MCP</span>
+            </div>
+          </div>
+
+          <div class="flow" aria-label="Pipeline diagram">
+<b>candidate</b> <span class="arrow">→</span> repo intake<br />
+&nbsp;&nbsp;<span class="arrow">↓</span> clone + language map<br />
+&nbsp;&nbsp;<span class="arrow">↓</span> tree-sitter <b>AST</b><br />
+&nbsp;&nbsp;<span class="arrow">↓</span> semgrep rules<br />
+&nbsp;&nbsp;<span class="arrow">↓</span> quality score<br />
+<b>recruiter</b> <span class="arrow">→</span> funnel stages<br />
+&nbsp;&nbsp;<span class="arrow">↓</span> ATS filter → schedule<br />
+<span style="color:#34d399">◆ automated hiring workflow</span>
+          </div>
+        </div>
+
+        <div class="proj-foot">
+          <span class="proj-note">private/ongoing · architecture available on request</span>
+          <div class="links">
+            <a class="icon-btn" href="https://github.com/its-skark/SkillFlowApp" target="_blank" rel="noopener" aria-label="Source">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+            <a class="icon-btn" href="https://github.com/its-skark/source_analytics_engine" target="_blank" rel="noopener" aria-label="Analytics engine">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9m5 10V5m5 14v-7m5 7V8"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- POS SaaS -->
+      <article class="card card--edge card--spot proj reveal" style="--c:var(--cyan)">
+        <div class="proj-top">
+          <h3>Restaurant · Hotel · Laundry POS</h3>
+          <span class="pill" style="font-size:.68rem">product</span>
+        </div>
+        <p>
+          A multi-tenant POS platform family: order &amp; billing flows, kitchen/barcode/QR printing, subscriptions,
+          org-level settings and an Express API split into focused services (users, bookings, organisations,
+          settings, customers) on PostgreSQL.
+        </p>
+        <div class="badges">
+          <span class="badge" style="--c:var(--cyan)">Angular 20</span><span class="badge" style="--c:var(--cyan)">PrimeNG</span>
+          <span class="badge" style="--c:var(--cyan)">Tailwind</span><span class="badge" style="--c:var(--cyan)">Express</span>
+          <span class="badge" style="--c:var(--cyan)">PostgreSQL</span><span class="badge" style="--c:var(--cyan)">Docker</span>
+        </div>
+        <div class="proj-foot">
+          <span class="proj-note">professional work · private repo</span>
+          <div class="links">
+            <a class="icon-btn" href="https://github.com/bilwg-services" target="_blank" rel="noopener" aria-label="Organisation">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- SVSP portal -->
+      <article class="card card--edge card--spot proj reveal" data-delay="70" style="--c:var(--emerald)">
+        <div class="proj-top">
+          <h3>SVSP Policy &amp; Impact Portal</h3>
+          <span class="pill" style="font-size:.68rem">open work</span>
+        </div>
+        <p>
+          Multi-language member portal for a policy organisation: membership payments, encrypted document handling,
+          receipt &amp; PDF generation, analytics dashboards and a full OpenAPI contract.
+        </p>
+        <div class="badges">
+          <span class="badge" style="--c:var(--emerald)">React</span><span class="badge" style="--c:var(--emerald)">Vite</span>
+          <span class="badge" style="--c:var(--emerald)">Tailwind</span><span class="badge" style="--c:var(--emerald)">Express</span>
+          <span class="badge" style="--c:var(--emerald)">Razorpay</span><span class="badge" style="--c:var(--emerald)">pdf-lib</span>
+          <span class="badge" style="--c:var(--emerald)">i18next</span>
+        </div>
+        <div class="proj-foot">
+          <span class="proj-note">bilwg-services · openapi documented</span>
+          <div class="links">
+            <a class="icon-btn" href="https://github.com/bilwg-services/swadeshi-vitta-salahakar-parishad" target="_blank" rel="noopener" aria-label="Repository">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- SreeIyer -->
+      <article class="card card--edge card--spot proj reveal" style="--c:var(--amber)">
+        <div class="proj-top">
+          <h3>SreeIyer e-commerce platform</h3>
+          <span class="pill" style="font-size:.68rem">product</span>
+        </div>
+        <p>
+          Storefront + admin for a digital commerce platform: Stripe checkout, realtime order socket, cloud object
+          storage, ebook/document processing pipeline and a Redux/Zustand state layer.
+        </p>
+        <div class="badges">
+          <span class="badge" style="--c:var(--amber)">Next.js</span><span class="badge" style="--c:var(--amber)">React</span>
+          <span class="badge" style="--c:var(--amber)">Stripe</span><span class="badge" style="--c:var(--amber)">MongoDB</span>
+          <span class="badge" style="--c:var(--amber)">Socket.IO</span><span class="badge" style="--c:var(--amber)">MUI</span>
+        </div>
+        <div class="proj-foot">
+          <span class="proj-note">professional work · private repo</span>
+          <span class="proj-note">payments · realtime · pdf</span>
+        </div>
+      </article>
+
+      <!-- Tenant storefront + island ssr -->
+      <article class="card card--edge card--spot proj reveal" data-delay="70" style="--c:var(--pink)">
+        <div class="proj-top">
+          <h3>Tenant Storefront Engine</h3>
+          <span class="pill" style="font-size:.68rem">platform</span>
+        </div>
+        <p>
+          Multi-tenant storefront toolkit with a DSL verifier, JWT auth, Redis caching and a small
+          <b>island-hydration SSR framework</b> I wrote to keep client JS small.
+        </p>
+        <div class="badges">
+          <span class="badge" style="--c:var(--pink)">Express</span><span class="badge" style="--c:var(--pink)">EJS</span>
+          <span class="badge" style="--c:var(--pink)">Redis</span><span class="badge" style="--c:var(--pink)">SQLite</span>
+          <span class="badge" style="--c:var(--pink)">Custom SSR</span>
+        </div>
+        <div class="proj-foot">
+          <span class="proj-note">EzerBiz · architecture research</span>
+          <span class="proj-note">devalue · streaming</span>
+        </div>
+      </article>
+
+      <!-- Kernel -->
+      <article class="card card--edge card--spot proj reveal" style="--c:var(--rose)">
+        <div class="proj-top">
+          <h3>LineageOS 21 custom kernel</h3>
+          <span class="pill" style="font-size:.68rem">systems</span>
+        </div>
+        <p>
+          Custom kernel 4.14.336 with KernelSU modifications, built and flashed for the Poco M2 Pro —
+          a reminder that not every bug lives in TypeScript.
+        </p>
+        <div class="badges">
+          <span class="badge" style="--c:var(--rose)">C</span><span class="badge" style="--c:var(--rose)">Linux</span>
+          <span class="badge" style="--c:var(--rose)">KernelSU</span><span class="badge" style="--c:var(--rose)">Build systems</span>
+        </div>
+        <div class="proj-foot">
+          <a class="proj-note" href="https://github.com/its-skark/kernal_lineageos21.0_pocoM2pro" target="_blank" rel="noopener">its-skark/kernal_lineageos21.0_pocoM2pro ↗</a>
+          <span class="proj-note">★ 1</span>
+        </div>
+      </article>
+
+      <!-- Small experiments -->
+      <article class="card card--edge card--spot proj reveal" data-delay="70" style="--c:var(--violet)">
+        <div class="proj-top">
+          <h3>Tools &amp; experiments</h3>
+          <span class="pill" style="font-size:.68rem">side quests</span>
+        </div>
+        <p>
+          <b>LucarioBot</b> — alert bot for Discord (Hikari). <b>LeadsGenerator</b> — Python scraping utilities.
+          <b>voxelEngine</b>, <b>router-cli</b> (Go), <b>LinuxSyncVolume</b> shell automation, plus a personal site and
+          a remote-meeting UI.
+        </p>
+        <div class="badges">
+          <span class="badge" style="--c:var(--violet)">Python</span><span class="badge" style="--c:var(--violet)">Go</span>
+          <span class="badge" style="--c:var(--violet)">Shell</span><span class="badge" style="--c:var(--violet)">PHP</span>
+          <span class="badge" style="--c:var(--violet)">CSS</span>
+        </div>
+        <div class="proj-foot">
+          <a class="proj-note" href="https://github.com/its-skark?tab=repositories" target="_blank" rel="noopener">see all 19 repos ↗</a>
+          <span class="proj-note">always learning</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ ACHIEVEMENTS ══════════════════════════ -->
+<section class="section" id="highlights">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">05 — highlights</span>
+        <h2 class="grad-text">Recognition</h2>
+      </div>
+      <p>// achievements.json</p>
+    </div>
+
+    <div class="award-grid">
+      <div class="card card--edge card--spot award reveal" style="--c:var(--violet)">
+        <span class="rank grad-text">#3,638</span>
+        <h4>TCS CodeVita — Season 13</h4>
+        <p>Global rank out of 100,000+ participants across a full-scale competitive programming marathon.</p>
+      </div>
+      <div class="card card--edge card--spot award reveal" data-delay="70" style="--c:var(--cyan)">
+        <span class="rank grad-text">NASA</span>
+        <h4>Astroverse Hackathon</h4>
+        <p>Selected for a high-intensity global space-tech challenge.</p>
+      </div>
+      <div class="card card--edge card--spot award reveal" data-delay="140" style="--c:var(--emerald)">
+        <span class="rank grad-text">500+</span>
+        <h4>Community at scale</h4>
+        <p>Led technical infrastructure for events with 500+ attendees as SCPPS Technical Committee Lead.</p>
+      </div>
+      <div class="card card--edge card--spot award reveal" data-delay="210" style="--c:var(--amber)">
+        <span class="rank grad-text">2026</span>
+        <h4>B.Tech IT</h4>
+        <p>Govind Ballabh Pant University of Agriculture and Technology — graduated June 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ CONTACT ══════════════════════════ -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="cta-panel reveal">
+      <span class="eyebrow">06 — contact</span>
+      <h2 style="margin-top:12px">Let's build something<br /><span class="grad-text">worth shipping.</span></h2>
+      <p>
+        Open to full-stack, product and AI-engineering roles — and always happy to talk architecture,
+        POS systems, code intelligence or custom kernels.
+      </p>
+
+      <div class="cta-actions">
+        <a class="btn btn--primary" href="https://github.com/its-skark" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+          github.com/its-skark
+        </a>
+        <a class="btn" href="mailto:rachit_pandey2004@outlook.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+          rachit_pandey2004@outlook.com
+        </a>
+        <a class="btn" href="https://itsrachit.qzz.io/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+          itsrachit.qzz.io
+        </a>
+      </div>
+
+      <div class="socials">
+        <a class="social" href="https://twitter.com/rachitp04" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.4L6.1 22H3l7.3-8.3L2.4 2h6.4l4.4 5.9L18.9 2Zm-1.1 18h1.8L7.3 3.9H5.4L17.8 20Z"/></svg>
+          @rachitp04
+        </a>
+        <a class="social" href="https://github.com/its-skark" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.1c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+          its-skark
+        </a>
+        <a class="social" href="https://github.com/bilwg-services" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          bilwg-services
+        </a>
+        <span class="social" style="cursor:default">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span data-clock>—</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap footer">
+  <span>© <span data-year>2026</span> Rachit Pandey — built with HTML, CSS &amp; stubborn curiosity.</span>
+  <span>Designed dark · <a href="https://github.com/its-skark/its-skark" target="_blank" rel="noopener">source on GitHub ↗</a></span>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

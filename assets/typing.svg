@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="162" viewBox="0 0 790 162" fill="none" role="img" aria-label="Rachit Pandey — full-stack typescript engineer; angular · react · node · postgres; python · tree-sitter · aws bedrock; shipping saas, pos &amp; code-intelligence tools">
+  <title>its-skark — animated typewriter banner</title>
+  <desc>Static fallback text: full-stack typescript engineer; angular · react · node · postgres; python · tree-sitter · aws bedrock; shipping saas, pos &amp; code-intelligence tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="790" y2="162" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1017"/><stop offset="1" stop-color="#080A10"/>
+    </linearGradient>
+    <linearGradient id="tg" x1="0" y1="0" x2="790" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/><stop offset=".5" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <radialGradient id="g1" cx=".5" cy=".5" r=".5">
+      <stop stop-color="#8B5CF6" stop-opacity=".28"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx=".5" cy=".5" r=".5">
+      <stop stop-color="#22D3EE" stop-opacity=".20"/><stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="44"/></filter>
+    <clipPath id="frame"><rect x="1" y="1" width="788" height="160" rx="16"/></clipPath>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+      .sans { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      @keyframes blink { 0%,48%{opacity:1} 49%,100%{opacity:0} }
+      .caret { animation: blink 1.1s steps(1) infinite; }
+      @keyframes drift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(24px,-11px)} }
+      .blob { animation: drift 20s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="790" height="162" fill="url(#bg)"/>
+    <g filter="url(#soft)">
+      <circle class="blob" cx="80" cy="8" r="110" fill="url(#g1)"/>
+      <circle cx="740" cy="154" r="110" fill="url(#g2)"/>
+    </g>
+
+    <rect x="1" y="1" width="3" height="160" fill="url(#tg)"/>
+
+    <!-- shell prompt: static, always visible, never animated away -->
+    <text class="mono" x="18" y="30" font-size="21" fill="#8B5CF6">$</text>
+    <rect class="caret" x="50" y="8" width="10" height="19" rx="2" fill="#22D3EE" opacity=".9"/>
+
+    
+  <g>
+    <clipPath id="clip0">
+      <rect x="48" y="1" width="0" height="39">
+        <animate attributeName="width" values="0;0;390.0;390.0;0;0" keyTimes="0.00000;0.03365;0.17788;0.76923;0.87500;1.00000"
+                 dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      </rect>
+    </clipPath>
+    <g clip-path="url(#clip0)">
+      <text class="mono" x="56" y="30" font-size="21" fill="#7CE7F5"
+            xml:space="preserve">full-stack typescript engineer</text>
+    </g>
+    <rect x="50" y="8" width="10" height="19" rx="2" fill="#22D3EE" opacity="0">
+      <animate attributeName="x" values="50.0;50.0;436.0;436.0;50.0;50.0"
+               keyTimes="0.00000;0.02885;0.05769;0.76923;0.77404;1.00000" dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;1;0;0" keyTimes="0.00000;0.02885;0.05769;0.76923;0.77404;1.00000"
+               dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+    </rect>
+  </g>
+
+  <g>
+    <clipPath id="clip1">
+      <rect x="48" y="35" width="0" height="39">
+        <animate attributeName="width" values="0;0;427.8;427.8;0;0" keyTimes="0.00000;0.07404;0.21827;0.79038;0.89615;1.00000"
+                 dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      </rect>
+    </clipPath>
+    <g clip-path="url(#clip1)">
+      <text class="mono" x="56" y="64" font-size="21" fill="#C4B5FD"
+            xml:space="preserve">angular · react · node · postgres</text>
+    </g>
+    <rect x="50" y="42" width="10" height="19" rx="2" fill="#22D3EE" opacity="0">
+      <animate attributeName="x" values="50.0;50.0;473.8;473.8;50.0;50.0"
+               keyTimes="0.00000;0.06923;0.09808;0.79038;0.79519;1.00000" dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;1;0;0" keyTimes="0.00000;0.06923;0.09808;0.79038;0.79519;1.00000"
+               dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+    </rect>
+  </g>
+
+  <g>
+    <clipPath id="clip2">
+      <rect x="48" y="69" width="0" height="39">
+        <animate attributeName="width" values="0;0;440.4;440.4;0;0" keyTimes="0.00000;0.11442;0.25865;0.81154;0.91731;1.00000"
+                 dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      </rect>
+    </clipPath>
+    <g clip-path="url(#clip2)">
+      <text class="mono" x="56" y="98" font-size="21" fill="#6EE7B7"
+            xml:space="preserve">python · tree-sitter · aws bedrock</text>
+    </g>
+    <rect x="50" y="76" width="10" height="19" rx="2" fill="#22D3EE" opacity="0">
+      <animate attributeName="x" values="50.0;50.0;486.4;486.4;50.0;50.0"
+               keyTimes="0.00000;0.10962;0.13846;0.81154;0.81635;1.00000" dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;1;0;0" keyTimes="0.00000;0.10962;0.13846;0.81154;0.81635;1.00000"
+               dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+    </rect>
+  </g>
+
+  <g>
+    <clipPath id="clip3">
+      <rect x="48" y="103" width="0" height="39">
+        <animate attributeName="width" values="0;0;566.4;566.4;0;0" keyTimes="0.00000;0.15481;0.29904;0.83269;0.93846;1.00000"
+                 dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      </rect>
+    </clipPath>
+    <g clip-path="url(#clip3)">
+      <text class="mono" x="56" y="132" font-size="21" fill="#FCD34D"
+            xml:space="preserve">shipping saas, pos &amp; code-intelligence tools</text>
+    </g>
+    <rect x="50" y="110" width="10" height="19" rx="2" fill="#22D3EE" opacity="0">
+      <animate attributeName="x" values="50.0;50.0;612.4;612.4;50.0;50.0"
+               keyTimes="0.00000;0.15000;0.17885;0.83269;0.83750;1.00000" dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+      <animate attributeName="opacity" values="0;1;1;1;0;0" keyTimes="0.00000;0.15000;0.17885;0.83269;0.83750;1.00000"
+               dur="10.4s" repeatCount="indefinite" calcMode="linear"/>
+    </rect>
+  </g>
+  </g>
+
+  <rect x="1" y="1" width="788" height="160" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity=".1"/>
+</svg>

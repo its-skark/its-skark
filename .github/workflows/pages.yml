@@ -1,0 +1,50 @@
+name: Deploy profile site to GitHub Pages
+
+# Serves index.html (the full HTML/CSS profile) at
+#   https://its-skark.github.io/its-skark/
+# A repo named <user>/<user> is an ordinary *project* site — Pages works on it
+# normally, and the profile README is unaffected.
+on:
+  push:
+    branches: [main]
+    paths: ["index.html", "assets/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+        id: pages
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          # The repo also holds README.md, tools/ and preview HTML files. Ship
+          # only what the site actually needs.
+          path: |
+            index.html
+            assets/styles.css
+            assets/app.js
+            assets/favicon.svg
+            assets/hero.svg
+            assets/stack.svg
+            assets/status.svg
+            assets/typing.svg
+            assets/divider.svg
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="196" viewBox="0 0 900 196" fill="none" role="img" aria-label="Currently: building at Bilwg Services, AI tooling, open to roles">
+  <title>Currently</title>
+  <defs>
+    <linearGradient id="sbg" x1="0" y1="0" x2="900" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1017"/><stop offset="1" stop-color="#080A10"/>
+    </linearGradient>
+    <linearGradient id="sline" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/><stop offset=".5" stop-color="#22D3EE"/><stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+    <radialGradient id="sglow" cx=".5" cy=".5" r=".5">
+      <stop stop-color="#8B5CF6" stop-opacity=".3"/><stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="sclip"><rect x="1" y="1" width="898" height="194" rx="16"/></clipPath>
+    <style>
+      @keyframes grow { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+      @keyframes blink { 0%,48%{opacity:1} 49%,100%{opacity:0} }
+      @keyframes drift { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,-14px)} }
+      .sans { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace; }
+      .grow { transform-origin: left center; }
+      .g1 { animation: grow 1.2s .15s cubic-bezier(.2,.8,.2,1) both; }
+      .g2 { animation: grow 1.2s .35s cubic-bezier(.2,.8,.2,1) both; }
+      .g3 { animation: grow 1.2s .55s cubic-bezier(.2,.8,.2,1) both; }
+      .caret { animation: blink 1.15s steps(1) infinite; }
+      .blob { animation: drift 19s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <g clip-path="url(#sclip)">
+    <rect width="900" height="196" fill="url(#sbg)"/>
+    <circle class="blob" cx="120" cy="30" r="120" fill="url(#sglow)"/>
+    <rect width="900" height="2" fill="url(#sline)"/>
+
+    <!-- header -->
+    <text class="mono" x="28" y="40" font-size="12" fill="#6C7689" letter-spacing="2.4">CURRENTLY</text>
+    <circle cx="118" cy="35" r="5" fill="#34D399">
+      <animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <text class="sans" x="134" y="40" font-size="13" fill="#34D399">live</text>
+
+    <!-- rows -->
+    <g class="sans">
+      <text class="mono" x="28" y="76" font-size="15" fill="#8B5CF6">01</text>
+      <text x="66" y="76" font-size="15" fill="#E9EDF6">Building multi-tenant POS &amp; storefront platforms</text>
+      <text class="mono" x="66" y="97" font-size="12" fill="#6C7689">angular · express · postgres · docker</text>
+      <rect class="grow g1" x="530" y="70" width="300" height="4" rx="2" fill="#8B5CF6" fill-opacity=".35"/>
+
+      <text class="mono" x="28" y="124" font-size="15" fill="#22D3EE">02</text>
+      <text x="66" y="124" font-size="15" fill="#E9EDF6">Building AI repo-intelligence engine (SkillFlow)</text>
+      <text class="mono" x="66" y="145" font-size="12" fill="#6C7689">python · tree-sitter · semgrep · fastapi</text>
+      <rect class="grow g2" x="530" y="118" width="248" height="4" rx="2" fill="#22D3EE" fill-opacity=".35"/>
+
+      <text class="mono" x="28" y="172" font-size="15" fill="#34D399">03</text>
+      <text x="66" y="172" font-size="15" fill="#E9EDF6">Open to full-stack &amp; AI engineering roles</text>
+      <text class="mono" x="66" y="193" font-size="12" fill="#6C7689">lucknow, in · remote / hybrid</text>
+      <rect class="grow g3" x="530" y="166" width="176" height="4" rx="2" fill="#34D399" fill-opacity=".35"/>
+    </g>
+  </g>
+
+  <rect x="1" y="1" width="898" height="194" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity=".12"/>
+</svg>

@@ -1,0 +1,14 @@
+# Preview / build artefacts — these are development aids, not part of the profile.
+preview-readme.html
+preview.html
+preview-typing.html
+preview-typing2.html
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
