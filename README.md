@@ -67,7 +67,7 @@
     <img alt="GitHub followers" src="https://img.shields.io/github/followers/its-skark?style=for-the-badge&label=Followers&color=8b5cf6" />
   </a>
   <img alt="Public repositories" src="https://img.shields.io/badge/repos-20-22d3ee?style=for-the-badge&logo=github&logoColor=white" />
-  <img alt="Location" src="https://img.shields.io/badge/lucknow%2C%20india-8b5cf6?style=for-the-badge&logo=googlemaps&logoColor=white" />
+  <img alt="Location: Pantnagar, India" src="https://img.shields.io/badge/pantnagar%2C%20india-8b5cf6?style=for-the-badge&logo=googlemaps&logoColor=white" />
   <img alt="Degree" src="https://img.shields.io/badge/b.tech%20it%20%7C%202026-22d3ee?style=for-the-badge&logo=university&logoColor=white" />
 </p>
 

@@ -277,7 +277,8 @@ Recorded here so a future edit does not reintroduce a stale claim:
 | Fact | Where it appears |
 |---|---|
 | B.Tech IT, GBPUAT, 2022 → 2026, **graduated June 2026** | README Education, `index.html` awards card |
-| SCPPS: university society, member **2022 → 2024**, Technical Committee Lead | README Experience, `index.html` timeline |
+| SCPPS: university society, member **2022 → 2024**, Technical Committee Lead, Pantnagar | README Experience, `index.html` timeline |
+| Location is **Pantnagar, India** (GBPUAT campus), not Lucknow — corrected directly by the owner | badge, `status.svg`, `index.html` |
 | Bilwg Services: Software Developer, May 2026 → present, remote | both |
 | Delosch: intern, Jun 2025 → Aug 2025, hybrid | both |
 | GitHub handle is `its-skark` (renamed from `Rachit-Pandey-2004`) | everywhere |
