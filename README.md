@@ -66,7 +66,7 @@
   <a href="https://github.com/its-skark">
     <img alt="GitHub followers" src="https://img.shields.io/github/followers/its-skark?style=for-the-badge&label=Followers&color=8b5cf6" />
   </a>
-  <img alt="Public repositories" src="https://img.shields.io/badge/repos-20-22d3ee?style=for-the-badge&logo=github&logoColor=white" />
+  <img alt="Public repositories" src="https://img.shields.io/badge/repos-21-22d3ee?style=for-the-badge&logo=github&logoColor=white" />
   <img alt="Location: Pantnagar, India" src="https://img.shields.io/badge/pantnagar%2C%20india-8b5cf6?style=for-the-badge&logo=googlemaps&logoColor=white" />
   <img alt="Degree" src="https://img.shields.io/badge/b.tech%20it%20%7C%202026-22d3ee?style=for-the-badge&logo=university&logoColor=white" />
 </p>
@@ -332,7 +332,7 @@ Python scraping utilities. <b>voxelEngine</b>, <b>router-cli</b> (Go) and
 ## GitHub activity
 
 <p align="center">
-  <img src="assets/snake.svg?v=18636b3" width="100%" alt="Contribution graph — the snake eats through the year" />
+  <img src="assets/snake.svg?v=2ad2818" width="100%" alt="Contribution graph — the snake eats through the year" />
 </p>
 
 <p align="center">
