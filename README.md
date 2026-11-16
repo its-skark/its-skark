@@ -332,7 +332,7 @@ Python scraping utilities. <b>voxelEngine</b>, <b>router-cli</b> (Go) and
 ## GitHub activity
 
 <p align="center">
-  <img src="assets/snake.svg?v=09507fc" width="100%" alt="Contribution graph — the snake eats through the year" />
+  <img src="assets/snake.svg?v=3ec201b" width="100%" alt="Contribution graph — the snake eats through the year" />
 </p>
 
 <p align="center">
